@@ -4,7 +4,7 @@
 
 	let summaryRevealed: Boolean = false;
 
-	function toggleSummary() {
+	function toggleSummary(): void {
 		summaryRevealed = !summaryRevealed;
 	}
 
