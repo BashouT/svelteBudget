@@ -1,10 +1,13 @@
 <script lang="ts">
 	import { Budget } from '../../classes/Budget';
-	import type { Expenditure } from '../../classes/Expenditures';
+	import { Expenditure } from '../../classes/Expenditure';
 	import { SpendCategory } from '../../enums/SpendCategory';
 
-	let income: Number;
-	let expenditures: Expenditure[];
+	let income: Number = 0;
+	let expenditures: Expenditure[] = [] as Expenditure[];
+	let category: SpendCategory;
+	let cost: Number;
+	let description: String;
 
 	let selectListCategories: SpendCategory[] = [
 		SpendCategory.Activity,
@@ -13,7 +16,24 @@
 		SpendCategory.Personal,
 		SpendCategory.Work
 	];
+
+	function addExpenditure(): void {
+		let expenditure = new Expenditure(category, cost, description);
+		expenditures.push(expenditure);
+		expenditures = expenditures;
+		return;
+	}
 </script>
+
+<div>
+	<h2>Summary</h2>
+	{income}
+	{#each expenditures as expenditure}
+		{expenditure.type}
+		{expenditure.amountSpent}
+        {expenditure.description}
+	{/each}
+</div>
 
 <div>
 	<label>
@@ -21,18 +41,20 @@
 		<input bind:value={income} name="income-input" type="number" />
 	</label>
 
-<br/>
-<br/>
-
+	<br />
+	<br />
+	<select bind:value={category}>
+		{#each selectListCategories as selectCategory}
+			<option value={selectCategory}>{selectCategory}</option>
+		{/each}
+	</select>
 	<label>
 		Cost
-		<input name="income-input" type="number" min="0" step="10" />
+		<input bind:value={cost} name="expenditure-cost" type="number" min="0" step="10" />
 	</label>
 	<label>
-		<select>
-			{#each selectListCategories as category}
-				<option value={category}>{category}</option>
-			{/each}
-		</select>
+		Description
+		<input bind:value={description} type="text" name="income-input" />
 	</label>
+	<button on:click={() => addExpenditure()}>Add Expenditure</button>
 </div>

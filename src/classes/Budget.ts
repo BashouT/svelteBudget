@@ -1,4 +1,4 @@
-import type { Expenditure } from "./Expenditures";
+import type { Expenditure } from "./Expenditure";
 
 export class Budget {
     income: Number

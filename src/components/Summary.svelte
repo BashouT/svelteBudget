@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { Expenditure } from '../classes/Expenditures';
+	import { Expenditure } from '../classes/Expenditure';
 	import { SpendCategory } from '../enums/SpendCategory';
 	import Pie from './charts/Pie.svelte';
 
 	let expenditures: Expenditure[] = [
-		new Expenditure(SpendCategory.Bill, 50),
-		new Expenditure(SpendCategory.Personal, 100),
-		new Expenditure(SpendCategory.Work, 700)
+		new Expenditure(SpendCategory.Bill, 50, "Mortgage"),
+		new Expenditure(SpendCategory.Personal, 100, "Shoes"),
+		new Expenditure(SpendCategory.Work, 700, "Commuting")
 	];
 </script>
 
