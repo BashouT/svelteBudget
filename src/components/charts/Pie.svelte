@@ -3,7 +3,8 @@
 
     import { quantize, interpolatePlasma, pie, arc } from 'd3';
     export let data; // or pass data to component as prop
-    
+   
+    // TODO: Enforce responsiveness of chart
     const width = 700 // the outer width of the chart, in pixels
     const height = width // the outer height of the chart, in pixels
     const percent = true // format values as percentages (true/false)

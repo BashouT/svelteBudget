@@ -10,7 +10,7 @@
 	];
 </script>
 
-<h1>HERE IS A PIECHART :)</h1>
+<h1>Summary of expenditures</h1>
 <Pie data={expenditures} />
 <table>
 	<th> Spend Category </th>
@@ -28,6 +28,3 @@
 		{/each}
 	</tbody>
 </table>
-<!-- {#each expenditures as expenditure}
-<p>{expenditure.type} = {expenditure.amountSpent}</p>
-{/each} -->
