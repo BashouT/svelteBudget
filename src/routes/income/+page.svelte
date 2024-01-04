@@ -43,6 +43,8 @@
 
 	<br />
 	<br />
+
+    <!-- TODO: Componentize so fields just for binding are extracted to specific components-->
 	<select bind:value={category}>
 		{#each selectListCategories as selectCategory}
 			<option value={selectCategory}>{selectCategory}</option>
