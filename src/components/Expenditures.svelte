@@ -4,9 +4,9 @@
 	import { expenditures } from '../stores';
 
 	let income: Number = 0;
-    let amountSpent = 0;
-    let category = SpendCategory.Activity;
-    let description = '';
+	let amountSpent: Number = 0;
+	let category: SpendCategory = SpendCategory.Activity;
+	let description: String = '';
 
 	let selectListCategories: SpendCategory[] = [
 		SpendCategory.Activity,
@@ -17,7 +17,10 @@
 	];
 
 	const addExpenditure = () => {
-		expenditures.update(contents => [...contents, new Expenditure(category, amountSpent, description)]);
+		expenditures.update((contents) => [
+			...contents,
+			new Expenditure(category, amountSpent, description)
+		]);
 	};
 </script>
 
@@ -39,15 +42,9 @@
 
 	<label>
 		Cost
-		<input
-			bind:value={amountSpent}
-			name="expenditure-cost"
-			type="number"
-			min="0"
-			step="10"
-		/>
+		<input bind:value={amountSpent} name="expenditure-cost" type="number" min="0" step="10" />
 	</label>
-    
+
 	<label>
 		Description
 		<input bind:value={description} type="text" name="income-input" />

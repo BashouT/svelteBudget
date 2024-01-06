@@ -1,24 +1,14 @@
 <script lang="ts">
-	import Expenditures from "../components/Expenditures.svelte";
-import Intro from "../components/Intro.svelte";
-	import Summary from "../components/Summary.svelte";
-
-	let summaryRevealed: Boolean = false;
-
-	function toggleSummary(): void {
-		summaryRevealed = !summaryRevealed;
-	}
-
+	import Expenditures from '../components/Expenditures.svelte';
+	import Intro from '../components/Intro.svelte';
+	import Summary from '../components/Summary.svelte';
+	import { expenditures } from '../stores';
 </script>
 
+<Intro />
 
-<Intro></Intro>
-<button on:click="{toggleSummary}">
-	Show summary
-</button>
+<Expenditures />
 
-<Expenditures></Expenditures>
-
-{#if summaryRevealed}
-	<Summary></Summary>
+{#if $expenditures.length > 0}
+<Summary />
 {/if}
