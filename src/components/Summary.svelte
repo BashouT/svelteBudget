@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { expenditures } from '../stores';
+	import { expenditures, groupedExpenditures } from '../stores';
 	import Pie from './charts/Pie.svelte';
 </script>
 
 <h1>Summary of expenditures</h1>
 {#key $expenditures}
-	<Pie data={$expenditures} />
+	<Pie data={$groupedExpenditures} />
 	<table>
 		<th> Spend Category </th>
 		<th> Amount Spent </th>

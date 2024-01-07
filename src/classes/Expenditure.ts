@@ -2,10 +2,10 @@ import type { SpendCategory } from "../enums/SpendCategory";
 
 export class Expenditure {
     type: SpendCategory 
-    amountSpent: Number
-    description: String
+    amountSpent: number
+    description: string
 
-    constructor(Type: SpendCategory, AmountSpent: Number, Description: String) {
+    constructor(Type: SpendCategory, AmountSpent: number, Description: string) {
         this.type = Type;
         this.amountSpent = AmountSpent;
         this.description = Description;

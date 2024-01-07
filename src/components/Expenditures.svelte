@@ -3,10 +3,10 @@
 	import { SpendCategory } from '../enums/SpendCategory';
 	import { expenditures } from '../stores';
 
-	let income: Number = 0;
-	let amountSpent: Number = 0;
+	let income: number = 0;
+	let amountSpent: number = 0;
 	let category: SpendCategory = SpendCategory.Activity;
-	let description: String = '';
+	let description: string = '';
 
     // TODO: Extend enum to expose these?
 	let selectListCategories: SpendCategory[] = [
