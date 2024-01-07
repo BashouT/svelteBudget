@@ -6,7 +6,7 @@ export const expenditures = writable([] as Expenditure[]);
 
 export const groupedExpenditures: Readable<Expenditure[]> = derived(expenditures, (expenditures) => {
     let groups = groupBy(expenditures, (i) => i.type)
-    sumGrouped(groups);
+    return sumGrouped(groups);
 })
 
 function groupBy<T>(arr: T[], fn: (item: T) => any) {
