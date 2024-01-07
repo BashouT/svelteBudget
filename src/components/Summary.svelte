@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { SpendCategory } from '../enums/SpendCategory';
 	import { expenditures } from '../stores';
 	import Pie from './charts/Pie.svelte';
 </script>

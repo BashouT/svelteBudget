@@ -8,6 +8,7 @@
 	let category: SpendCategory = SpendCategory.Activity;
 	let description: String = '';
 
+    // TODO: Extend enum to expose these?
 	let selectListCategories: SpendCategory[] = [
 		SpendCategory.Activity,
 		SpendCategory.Bill,
