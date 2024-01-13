@@ -7,15 +7,8 @@
 	let amountSpent: number = 0;
 	let category: SpendCategory = SpendCategory.Activity;
 	let description: string = '';
+	let selectListCategories: SpendCategory[] = Object.values(SpendCategory);
 
-    // TODO: Extend enum to expose these?
-	let selectListCategories: SpendCategory[] = [
-		SpendCategory.Activity,
-		SpendCategory.Bill,
-		SpendCategory.Other,
-		SpendCategory.Personal,
-		SpendCategory.Work
-	];
 
 	const addExpenditure = () => {
 		expenditures.update((contents) => [
