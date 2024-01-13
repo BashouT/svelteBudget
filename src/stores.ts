@@ -9,6 +9,8 @@ export const groupedExpenditures: Readable<Expenditure[]> = derived(expenditures
     return sumGrouped(groups);
 })
 
+export const income = writable(0 as number);
+
 function groupBy<T>(arr: T[], fn: (item: T) => any) {
     return arr.reduce<Record<string, T[]>>((prev, curr) => {
         const groupKey = fn(curr);

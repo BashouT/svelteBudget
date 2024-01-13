@@ -1,9 +1,8 @@
 <script lang="ts">
 	import { Expenditure } from '../classes/Expenditure';
 	import { SpendCategory } from '../enums/SpendCategory';
-	import { expenditures } from '../stores';
+	import { expenditures, income } from '../stores';
 
-	let income: number = 0;
 	let amountSpent: number = 0;
 	let category: SpendCategory = SpendCategory.Activity;
 	let description: string = '';
@@ -21,7 +20,7 @@
 <div>
 	<label>
 		What is your income?
-		<input bind:value={income} name="income-input" type="number" />
+		<input bind:value={$income} name="income-input" type="number" />
 	</label>
 
 	<br />
