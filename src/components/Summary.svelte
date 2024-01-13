@@ -9,14 +9,18 @@
 		}, 0);
 
 	$: netIncome = $income - totalExpenditure;
-	$: percentageOfIncome = (totalExpenditure / $income) * 100;
+	$: percentageOfIncome = ((totalExpenditure / $income) * 100).toFixed(2);
 </script>
 
 <h1>Summary of expenditures</h1>
 {#key $expenditures}
 	<Pie data={$groupedExpenditures} />
-	<div>
-		<h2>{netIncome}</h2>
+	<div class="net-income">
+		<h2>Income</h2>
+		<h2>Net</h2>
+		<h2>Expenditures as percentage</h2>
+		<h2>£{$income}</h2>
+		<h2>£{netIncome}</h2>
 		<h2>{percentageOfIncome}%</h2>
 	</div>
 	<table>
@@ -36,3 +40,27 @@
 		</tbody>
 	</table>
 {/key}
+
+<style>
+	.net-income {
+		background-color: rgb(250, 250, 250);
+		border-radius: 25px;
+		text-align: center;
+		margin: auto;
+		width: 65%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	.net-income > * {
+		flex: 1 1 160px;
+	}
+
+	/* .net-module {
+		display: inline-flex;
+		padding-left: 10%;
+		padding-right: 10%;
+	} */
+</style>

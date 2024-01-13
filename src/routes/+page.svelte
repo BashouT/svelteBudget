@@ -5,10 +5,20 @@
 	import { expenditures } from '../stores';
 </script>
 
-<Intro />
+<div class="container">
+	<Intro />
 
-<Expenditures />
+	<Expenditures />
 
-{#if $expenditures.length > 0}
-<Summary />
-{/if}
+	{#if $expenditures.length > 0}
+		<Summary />
+	{/if}
+</div>
+
+<style>
+	.container {
+		width: 100%;
+		max-width: 900px;
+		margin: auto;
+	}
+</style>
