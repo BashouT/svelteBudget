@@ -2,7 +2,7 @@
 	import { expenditures, groupedExpenditures, income } from '../stores';
 	import Pie from './charts/Pie.svelte';
 
-	let totalExpenditure: number = $groupedExpenditures
+	$: totalExpenditure = $groupedExpenditures
 		.map((e) => e.amountSpent)
 		.reduce((accumulator, current) => {
 			return accumulator + current;
