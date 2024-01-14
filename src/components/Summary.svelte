@@ -58,7 +58,7 @@
 
 	.summary-module {
 		background-color: rgb(250, 250, 250);
-		border-radius: 25px;
+		border-radius: 7px;
 		text-align: center;
 		margin: auto;
 		width: 65%;

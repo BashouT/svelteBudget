@@ -4,7 +4,7 @@
 	import { expenditures, income } from '../stores';
 
 	let amountSpent: number = 0;
-	let category: SpendCategory = SpendCategory.Activity;
+	let category: SpendCategory = SpendCategory.Bill;
 	let description: string = '';
 	let selectListCategories: SpendCategory[] = Object.values(SpendCategory);
 
