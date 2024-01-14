@@ -8,7 +8,6 @@
 	let description: string = '';
 	let selectListCategories: SpendCategory[] = Object.values(SpendCategory);
 
-
 	const addExpenditure = () => {
 		expenditures.update((contents) => [
 			...contents,
@@ -17,7 +16,7 @@
 	};
 </script>
 
-<div>
+<div class="expenditures">
 	<label>
 		What is your income?
 		<input bind:value={$income} name="income-input" type="number" />
@@ -44,3 +43,33 @@
 	</label>
 	<button on:click={addExpenditure}>Add Expenditure</button>
 </div>
+
+<style>
+	input[type='number']::-webkit-outer-spin-button,
+	input[type='number']::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	input[type='number'] {
+		-moz-appearance: textfield;
+	}
+
+	.expenditures input {
+		border-radius: 7px;
+		opacity: 0.75;
+		border: solid 0.025rem;
+		border-color: black;
+		background-color: lightgray;
+		padding-left: 5px;
+	}
+
+	.expenditures select {
+		background-color: lightgray;
+		opacity: .75;
+		border: solid 0.025rem;
+		border-color: black;
+		border-radius: 7px;
+		padding-left: 5px;
+	}
+</style>
