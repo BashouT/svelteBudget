@@ -1,13 +1,20 @@
 <script lang="ts">
-    import Intro from '../components/Intro.svelte'
+	import { navigating } from '$app/stores';
+	import Intro from '../components/Intro.svelte';
 </script>
-
 
 <div class="container">
 	<Intro />
-    <slot />
-</div>
+	<nav>
+		<a href="/">Return home</a>
+		<a href="/monthly">Monthly Budgeting</a>
+	</nav>
 
+	{#if $navigating}
+		navigating to {$navigating.to?.url.pathname}
+	{/if}
+	<slot />
+</div>
 
 <style>
 	.container {

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { expenditures, groupedExpenditures, income } from '../stores';
+	import IdealBudget from './IdealBudget.svelte';
 	import Pie from './charts/Pie.svelte';
 
 	$: totalExpenditure = $groupedExpenditures
@@ -13,7 +14,8 @@
 </script>
 
 <div class="summary">
-	<h1>Summary of expenditures</h1>
+	<IdealBudget />
+	<h1>Summary of your expenditures</h1>
 	{#key $expenditures}
 		<Pie data={$groupedExpenditures} />
 		<div class="summary-module">
