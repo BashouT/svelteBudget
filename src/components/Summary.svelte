@@ -23,7 +23,8 @@
 <div class="summary">
 	{#if showRecommendedBudget}
 	<div transition:blur={{ amount: 10 }}>
-    	<h1 on:click={toggleRecommendedBudget}>Our recommendation</h1>
+		<!-- Make inline and style nicely -->
+    	<h1 >Our recommendation</h1><button on:click={toggleRecommendedBudget}>Dismiss</button>
 		<IdealBudget />
 	</div>
 	{/if}
