@@ -2,6 +2,9 @@
 	import { expenditures, groupedExpenditures, income } from '../stores';
 	import IdealBudget from './IdealBudget.svelte';
 	import Pie from './charts/Pie.svelte';
+	import { blur } from 'svelte/transition';
+
+	let showRecommendedBudget: boolean = true;
 
 	$: totalExpenditure = $groupedExpenditures
 		.map((e) => e.amountSpent)
@@ -11,10 +14,19 @@
 
 	$: netIncome = $income - totalExpenditure;
 	$: percentageOfIncome = ((totalExpenditure / $income) * 100).toFixed(2);
+
+	function toggleRecommendedBudget() {
+		showRecommendedBudget = !showRecommendedBudget;
+	}
 </script>
 
 <div class="summary">
-	<IdealBudget />
+	{#if showRecommendedBudget}
+	<div transition:blur={{ amount: 10 }}>
+    	<h1 on:click={toggleRecommendedBudget}>Our recommendation</h1>
+		<IdealBudget />
+	</div>
+	{/if}
 	<h1>Summary of your expenditures</h1>
 	{#key $expenditures}
 		<Pie data={$groupedExpenditures} />

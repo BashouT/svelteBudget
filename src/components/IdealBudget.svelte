@@ -7,17 +7,17 @@
 	$: save = ($income / 100) * 20;
 </script>
 
-<div>
-    <h1>Our recommendation</h1>
-    <p>Based on the income you provided and using the standard 50/30/20 split, we recommend you should be distributing your money as follows:</p>
-	<div class="summary-module">
-		<h2>Needs</h2>
-		<h2>Wants</h2>
-		<h2>To save</h2>
-		<p>£{needs}</p>
-		<p>£{wants}</p>
-		<p>£{save}</p>
-	</div>
+<p>
+	Based on the income you provided and using the standard 50/30/20 split, we recommend you should be
+	distributing your money as follows:
+</p>
+<div class="summary-module">
+	<h2>Needs</h2>
+	<h2>Wants</h2>
+	<h2>To save</h2>
+	<p>£{needs}</p>
+	<p>£{wants}</p>
+	<p>£{save}</p>
 </div>
 
 <style>
